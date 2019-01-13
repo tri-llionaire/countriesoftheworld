@@ -399,25 +399,57 @@ answers = {
     'Zambia':'Lusaka',
     'Zimbabwe':'Harare',
 }
-versioning = ['1.0.0', '1.0.1', '1.0.2', '1.1.0', '1.1.1', '1.1.2', '1.1.3', '1.1.4', '1.1.5']
-print '\nWelcome to LEARN.PY. Here you can learn the countries and capitals of the world! Let\'s get started.'
+versioning = ['1.0.0', '1.0.1', '1.0.2', '1.1.0', '1.1.1', '1.1.2', '1.1.3', '1.1.4', '1.1.5', '1.1.6', '1.1.7', '1.2.0', '1.2.1', '1.2.2', '1.3.0', '1.3.1', '1.3.2'
+]
+print '\nWelcome to LEARN.PY. Here you can learn the countries and capitals of the world! Type \'end\' to end the program. Let\'s get started.'
 print '\nVersion %s' % (versioning[-1])
 right = 0
 wrong = 0
-while True:
-    n = random.randint(0, 196)
-    print '\n\n'
-    print 'Which country has the capital %s?\n' % (answers.get(countries[n]))
-    ans = raw_input()
-    def get_key(val):
-        for key, value in answers.items():
-            if val == value:
-                return key
-    if ans == get_key(answers.get(countries[n])):
-        print '\nCORRECT'
-        right += 1
-        print 'Correct: %s. Wrong: %s.' % (right, wrong)
-    else:
-        print '\nWRONG. ' + get_key(answers.get(countries[n]))
-        wrong += 1
-        print 'Correct: %s. Wrong: %s.' % (right, wrong)
+def get_key(val):
+    for key, value in answers.items():
+        if val == value:
+            return key
+def c_w(right, wrong):
+    return 'Correct: %s. Wrong: %s.' % (right, wrong)
+def perc(right, wrong):
+    return 100 / (wrong + right) * right
+choose = raw_input('Answer with the countries or capitals? (1 or 2): ')
+if choose == '2':
+	while True:
+		n = random.randint(0, 196)
+		print '\n\n'
+		print 'What is the capital of the country %s?\n' % (get_key(answers.get(countries[n])))
+		ans = raw_input()
+		if ans == 'end':
+			exit()
+		elif ans == answers.get(countries[n]):
+			print '\nCORRECT'
+			right += 1
+			print c_w(right, wrong)
+			print str(perc(right, wrong)) + '%'
+		else:
+			print '\nWRONG. ' + answers.get(countries[n])
+			wrong += 1
+			print c_w(right, wrong)
+			print str(perc(right, wrong)) + '%'
+elif choose == '1':
+	while True:
+		n = random.randint(0, 196)
+		print '\n\n'
+		print 'Which country has the capital %s?\n' % (answers.get(countries[n]))
+		ans = raw_input()
+		if ans == 'end':
+			exit()
+		elif ans == get_key(answers.get(countries[n])):
+			print '\nCORRECT'
+			right += 1
+			print c_w(right, wrong)
+			print str(perc(right, wrong)) + '%'
+		else:
+			print '\nWRONG. ' + get_key(answers.get(countries[n]))
+			wrong += 1
+			print c_w(right, wrong)
+			print str(perc(right, wrong)) + '%'
+else:
+	print 'Um'
+	exit()
