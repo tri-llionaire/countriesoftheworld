@@ -399,8 +399,7 @@ answers = {
     'Zambia':'Lusaka',
     'Zimbabwe':'Harare',
 }
-versioning = ['1.0.0', '1.0.1', '1.0.2', '1.1.0', '1.1.1', '1.1.2', '1.1.3', '1.1.4', '1.1.5', '1.1.6', '1.1.7', '1.2.0', '1.2.1', '1.2.2', '1.3.0', '1.3.1', '1.3.2'
-]
+versioning = ['1.0.0', '1.0.1', '1.0.2', '1.1.0', '1.1.1', '1.1.2', '1.1.3', '1.1.4', '1.1.5', '1.1.6', '1.1.7', '1.2.0', '1.2.1', '1.2.2', '1.3.0', '1.3.1', '1.3.2', '1.4.0']
 print '\nWelcome to LEARN.PY. Here you can learn the countries and capitals of the world! Type \'end\' to end the program. Let\'s get started.'
 print '\nVersion %s' % (versioning[-1])
 right = 0
@@ -420,9 +419,9 @@ if choose == '2':
 		print '\n\n'
 		print 'What is the capital of the country %s?\n' % (get_key(answers.get(countries[n])))
 		ans = raw_input()
-		if ans == 'end':
+		if ans.lower() == 'end':
 			exit()
-		elif ans == answers.get(countries[n]):
+		elif ans.lower() == answers.get(countries[n]).lower():
 			print '\nCORRECT'
 			right += 1
 			print c_w(right, wrong)
@@ -438,9 +437,9 @@ elif choose == '1':
 		print '\n\n'
 		print 'Which country has the capital %s?\n' % (answers.get(countries[n]))
 		ans = raw_input()
-		if ans == 'end':
+		if ans.lower() == 'end':
 			exit()
-		elif ans == get_key(answers.get(countries[n])):
+		elif ans.lower() == get_key(answers.get(countries[n])).lower():
 			print '\nCORRECT'
 			right += 1
 			print c_w(right, wrong)
