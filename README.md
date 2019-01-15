@@ -5,4 +5,4 @@ Built by Tristan Price with Gabriel Swan (@Akuhcap). Copyright 2019.
 
 Version 1.5.0, Python 2.7.15.
 
-Apache license.
+Apache 2.0 license.
