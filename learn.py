@@ -399,7 +399,7 @@ answers = {
     'Zambia':'Lusaka',
     'Zimbabwe':'Harare',
 }
-versioning = ['1.0.0', '1.0.1', '1.0.2', '1.1.0', '1.1.1', '1.1.2', '1.1.3', '1.1.4', '1.1.5', '1.1.6', '1.1.7', '1.2.0', '1.2.1', '1.2.2', '1.3.0', '1.3.1', '1.3.2', '1.4.0', '1.4.1', '1.4.2', '1.4.3', '1.5.0']
+versioning = ['1.0.0', '1.0.1', '1.0.2', '1.1.0', '1.1.1', '1.1.2', '1.1.3', '1.1.4', '1.1.5', '1.1.6', '1.1.7', '1.2.0', '1.2.1', '1.2.2', '1.3.0', '1.3.1', '1.3.2', '1.4.0', '1.4.1', '1.4.2', '1.4.3', '1.5.0', '1.5.1']
 print '\nWelcome to LEARN.PY. Here you can learn the countries and capitals of the world! Type \'end\' to end the program. Let\'s get started.'
 print '\nVersion %s' % (versioning[-1])
 right = 0
@@ -424,12 +424,12 @@ if choose == '2':
 		if ans.lower() == 'end':
 			exit()
 		elif ans.lower() == answers.get(countries[n]).lower():
-			print '\nCORRECT'
+			print '\n\033[92m CORRECT'
 			right += 1
 			print c_w(right, wrong)
 			print str(perc(right, wrong)) + '%'
 		else:
-			print '\nWRONG. ' + answers.get(countries[n])
+			print '\n\033[91m WRONG. ' + answers.get(countries[n])
 			wrong += 1
 			print c_w(right, wrong)
 			print str(perc(right, wrong)) + '%'
@@ -442,13 +442,13 @@ elif choose == '1':
 		if ans.lower() == 'end':
 			exit()
 		elif ans.lower() == get_key(answers.get(countries[n])).lower():
-			print '\nCORRECT'
+			print '\n\033[92m CORRECT'
 			right += 1
 			total = right + wrong
 			print c_w(right, wrong)
 			print str(perc(right, wrong)) + '%'
 		else:
-			print '\nWRONG. ' + get_key(answers.get(countries[n]))
+			print '\n\033[91m WRONG. ' + get_key(answers.get(countries[n]))
 			wrong += 1
 			total = right + wrong
 			print c_w(right, wrong)
