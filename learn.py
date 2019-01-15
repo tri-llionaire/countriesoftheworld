@@ -399,7 +399,7 @@ answers = {
     'Zambia':'Lusaka',
     'Zimbabwe':'Harare',
 }
-versioning = ['1.0.0', '1.0.1', '1.0.2', '1.1.0', '1.1.1', '1.1.2', '1.1.3', '1.1.4', '1.1.5', '1.1.6', '1.1.7', '1.2.0', '1.2.1', '1.2.2', '1.3.0', '1.3.1', '1.3.2', '1.4.0', '1.4.1', '1.4.2', '1.4.3', '1.5.0', '1.5.1', '1.5.2', '1.5.3', '1.5.4', '1.5.5']
+versioning = ['1.0.0', '1.0.1', '1.0.2', '1.1.0', '1.1.1', '1.1.2', '1.1.3', '1.1.4', '1.1.5', '1.1.6', '1.1.7', '1.2.0', '1.2.1', '1.2.2', '1.3.0', '1.3.1', '1.3.2', '1.4.0', '1.4.1', '1.4.2', '1.4.3', '1.5.0', '1.5.1', '1.5.2', '1.5.3', '1.5.4', '1.5.5', '1.5.6']
 print '\nWelcome to LEARN.PY. Here you can learn the countries and capitals of the world! Type \'end\' to end the program. Let\'s get started.'
 print '\nVersion %s' % (versioning[-1])
 right = 0
@@ -414,8 +414,7 @@ def c_w_r(right, wrong):
 def c_w_w(right, wrong):
     return '\n\033[91m%s/%s\033[0m' % (right, wrong)
 def perc(right, wrong):
-    percent = 100.00 / float(total) * float(right)
-    return '%.2f' % percent
+    return '%.2f' % (100.00 / float(total) * float(right))
 choose = raw_input('Answer with the countries or capitals? (1 or 2): ')
 if choose == '2':
 	while True:
