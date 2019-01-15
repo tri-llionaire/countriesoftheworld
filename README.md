@@ -1,6 +1,8 @@
 # countriesoftheworld
 Learn the countries and capitals of the world!
 
-Built by Tristan Price. Copyright 2019.
+Built by Tristan Price with Gabriel Swan (@Akuhcap). Copyright 2019.
 
 Version 1.5.0, Python 2.7.15.
+
+Apache license.
