@@ -399,9 +399,10 @@ answers = {
     'Zambia':'Lusaka',
     'Zimbabwe':'Harare',
 }
-versioning = ['1.0.0', '1.0.1', '1.0.2', '1.1.0', '1.1.1', '1.1.2', '1.1.3', '1.1.4', '1.1.5', '1.1.6', '1.1.7', '1.2.0', '1.2.1', '1.2.2', '1.3.0', '1.3.1', '1.3.2', '1.4.0', '1.4.1', '1.4.2', '1.4.3', '1.5.0', '1.5.1', '1.5.2', '1.5.3', '1.5.4', '1.5.5', '1.5.6', '1.5.7', '1.5.8']
-print '\nWelcome to LEARN.PY. Here you can learn the countries and capitals of the world! Type \'end\' to end the program. Let\'s get started.'
-print '\nVersion %s' % (versioning[-1])
+versioning = ['1.0.0', '1.0.1', '1.0.2', '1.1.0', '1.1.1', '1.1.2', '1.1.3', '1.1.4', '1.1.5', '1.1.6', '1.1.7', '1.2.0', '1.2.1', '1.2.2', '1.3.0', '1.3.1', '1.3.2', '1.4.0', '1.4.1', '1.4.2', '1.4.3', '1.5.0', '1.5.1', '1.5.2', '1.5.3', '1.5.4', '1.5.5', '1.5.6', '1.5.7', '1.5.8', '1.6.0', '1.6.1', '1.6.2']
+build = ['032']
+date = ['190116']
+print '\nWelcome to LEARN.PY. Here you can learn the countries and capitals of the world! Type \'end\' to end the program. Type \'all\' to see the technical data for this program. Let\s get started.\n'
 right = 0
 wrong = 0
 total = right + wrong
@@ -416,7 +417,12 @@ def c_w_w(right, wrong):
 def perc(right, wrong):
     return '%.2f' % (100.00 / float(total) * float(right))
 choose = raw_input('Answer with the countries or capitals? (1 or 2): ')
-if choose == '2':
+if choose == 'all':
+    print '\nVersion %s.%s.%s' % (versioning[-1], build[-1], date[-1])
+    print 'Tristan Price and Gabriel Swan.'
+    print 'Copyright 2019 Apache 2.0 license.'
+    print 'Python 2.7.15'
+elif choose == '2':
 	while True:
 		n = random.randint(0, 196)
 		print '\n\n'
